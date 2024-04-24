@@ -6,7 +6,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
     signUpUser(firstName, lastName),
     uploadPhoto(fileName),
   ]).then((data) => data.reduce((acc, item) => {
-    acc.push({ status: item.status, value: item.value || item.reason });
+    acc.push({ status: item.status, value: item.value || item.reason.toString() });
     return acc;
   }, []));
 }
